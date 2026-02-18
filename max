@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    // Example 2D array with 3 rows and 4 columns
+    int arr[3][4] = {
+        {1, 5, 2, 8},
+        {3, 9, 6, 4},
+        {7, 1, 9, 5}
+    };
+    int rows = 3;
+    int cols = 4;
+
+    // Iterate through each row
+    for (int i = 0; i < rows; i++) {
+        // Initialize max for the current row with the first element of that row
+        int max_val = arr[i][0];
+
+        // Iterate through each column in the current row to find the maximum
+        for (int j = 1; j < cols; j++) {
+            if (arr[i][j] > max_val) {
+                max_val = arr[i][j];
+            }
+        }
+
+        // Print the maximum element found for the current row
+        printf("Maximum element of row %d is: %d\n", i, max_val);
+    }
+
+    return 0;
+}
